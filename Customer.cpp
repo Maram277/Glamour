@@ -3,8 +3,8 @@
 
 using namespace std;
 
-Customer::Customer(int Id, string name, string email, string number):
-	Customer_Id(Id), Name(name), Email(email), Phone_number(number)
+Customer::Customer(int Id, const string& name, const string& email, const string& number):
+	customerID(Id), name(name), email(email), phone_number(number)
 {
 }
 
@@ -12,13 +12,14 @@ void Customer::showCustomerInfo() const
 {
 	cout << "Customer informations: " << endl;
 	cout << "-----------------------" << endl;
-	cout << "Customer ID: " << Customer_Id << endl;
-	cout << "Name: " << Name << endl;
-	cout << "Phone number: " << Phone_number << endl;
+	cout << "Customer ID: " << customerID << endl;
+	cout << "Name: " << name << endl;
+	cout << "Email: " << email << endl;
+	cout << "Phone number: " << phone_number << endl;
 	cout << "-----------------------" << endl;
 }
 
 int Customer::getCustomerId() const
 {
-	return Customer_Id;
+	return this->customerID;
 }

@@ -1,21 +1,32 @@
-#pragma once
+#include <iostream>
 #include <string>
+#include "booking.h"
 
 using namespace std;
 
-class Booking
+Booking::Booking(int BooingID, const string data, const string time, int customer) :
+	BookingID(BooingID), BookingData(data), BookingTime(time), CustomerID(customer)
 {
-private:
-	int BookingID;
-	string BookingData;
-	string BookingTime;
-	int CustomerID;
+}
 
-public:
+int Booking::getBookingId() const
+{
+	return this->BookingID;
+}
 
-	Booking(int BooingID, const string data, const string time, int customer);
+int Booking::getCustomerId() const
+{
+	return this->CustomerID;
+}
 
-	int getBookingId() const;
-	int getCustomerId() const;
-	void showBookingInfo() const;
-};
+void Booking::showBookingInfo() const
+{
+	cout << "Booking information:" << endl;
+	cout << "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨" << endl;
+	cout << "Booking ID: " << BookingID << endl;
+	cout << "Booking data: " << BookingData << endl;
+	cout << "Booking time: " << BookingTime << endl;
+	cout << "Customer ID: " << CustomerID << endl;
+	cout << "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\n" << endl;
+
+}
